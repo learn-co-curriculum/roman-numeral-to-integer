@@ -1,15 +1,20 @@
-def method_name(arg)
+def roman_numeral(string)
   # type your code in here
 end
 
 if __FILE__ == $PROGRAM_NAME
-  puts "Expecting: 3"
-  puts method_name([2, 1, 3, 3, 2])
+  puts "Expecting: 1"
+  puts roman_numeral('I')
 
   puts
 
-  puts "Expecting: -1"
-  puts method_name([1, 2, 3, 4])
+  puts "Expecting: 9"
+  puts roman_numeral('IX'))
+
+  puts
+
+  puts "Expecting: 402"
+  puts roman_numeral('CDII'))
 
   # Don't forget to add your own!
 end

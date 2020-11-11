@@ -4,11 +4,13 @@
 
 Convert the provided Roman numeral (a String) to an Integer. For more information on Roman numerals, please go to [Math Is Fun](https://www.mathsisfun.com/roman-numerals.html).
 
+The String input will always consist of uppercase letters with a minimum length of 1. We will only be covering numbers below 4000, so you can safely ignore the "Really Big Numbers" section on the Math is Fun page we linked to.
+
 ```
 Input: 'I'
 Output: 1
 
-Input: 'XI'
+Input: 'IX'
 Output: 9
 
 Input: 'CDII'

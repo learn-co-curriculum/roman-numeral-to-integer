@@ -4,13 +4,18 @@ function romanNumeral(string) {
 
 if (require.main === module) {
   // add your own tests in here
-  console.log("Expecting: 3");
-  console.log(romanNumeral([2, 1, 3, 3, 2]));
+  console.log("Expecting: 1");
+  console.log(romanNumeral('I'));
 
   console.log("");
 
-  console.log("Expecting: -1");
-  console.log(romanNumeral([1, 2, 3, 4]));
+  console.log("Expecting: 9");
+  console.log(romanNumeral('IX'));
+
+  console.log("");
+
+  console.log("Expecting: 402");
+  console.log(romanNumeral('CDII'));
 }
 
 module.exports = romanNumeral;
