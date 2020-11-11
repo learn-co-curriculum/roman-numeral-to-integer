@@ -81,4 +81,29 @@ if (require.main === module) {
 module.exports = romanNumeral;
 
 // Please add your pseudocode to this file
-// And a written explanation of your solution
+/****************************************************************************
+ * store important roman numerals in an Object called romans
+ * initialize total to 0
+ * 
+ * iterate over string:
+ *    if current character + next character is a key in romans:
+ *      add that value to total
+ *      skip over next character in iteration
+ *    else:
+ *      get value where current character is a key in romans
+ *      add value to total
+ * 
+ * return total
+ * *************************************************************************/
+
+ // And a written explanation of your solution
+/****************************************************************************
+ * We can store the unique Roman numerals in an Object (key-value pairs), including
+ * those where the small Roman numeral comes before the larger Roman numeral (e.g. 'IX').
+ * When we iterate over the string, we first check if the current character plus the next
+ * character is a key in the Object. If it is, we add the value associated with that key
+ * to the total. We'll then need to increment our index in the string by 2. This takes care
+ * of those numerals where the small number comes before the big one. If the two characters
+ * together aren't a key, we add the value at the single-character key to the total and
+ * increment the index by one.
+ *  *************************************************************************/
