@@ -9,12 +9,12 @@ if __FILE__ == $PROGRAM_NAME
   puts
 
   puts "Expecting: 9"
-  puts roman_numeral('IX'))
+  puts roman_numeral('IX')
 
   puts
 
   puts "Expecting: 402"
-  puts roman_numeral('CDII'))
+  puts roman_numeral('CDII')
 
   # Don't forget to add your own!
 end
