@@ -1,12 +1,20 @@
 # Bonus 2: Roman Numeral to Integer
 
-**Fork and then clone me!**
+## Learning Goals
 
-Convert the provided Roman numeral (a String) to an Integer. For more information on Roman numerals, please go to [Math Is Fun](https://www.mathsisfun.com/roman-numerals.html).
+- Practice algorithmic problem solving
 
-The String input will always consist of uppercase letters with a minimum length of 1. We will only be covering numbers below 4000, so you can safely ignore the "Really Big Numbers" section on the Math is Fun page we linked to.
+## Instructions
 
-```
+Convert the provided Roman numeral (a String) to an Integer. For more
+information on Roman numerals, please go to
+[Math Is Fun](https://www.mathsisfun.com/roman-numerals.html).
+
+The String input will always consist of uppercase letters with a minimum length
+of 1. We will only be covering numbers below 4000, so you can safely ignore the
+"Really Big Numbers" section on the Math is Fun page we linked to.
+
+```txt
 Input: 'I'
 Output: 1
 
@@ -17,9 +25,10 @@ Input: 'CDII'
 Output: 402
 ```
 
-Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.
+Use the language of your choosing. We've included starter files for some
+languages where you can pseudocode, explain your solution and code.
 
-## Before you start coding:
+## Before you start coding
 
 1. Rewrite the problem in your own words
 2. Validate that you understand the problem
