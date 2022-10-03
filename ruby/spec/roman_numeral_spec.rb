@@ -18,4 +18,9 @@ RSpec.describe '#roman_numeral' do
     expect(roman_numeral('CCXXIII')).to eq(223)
     expect(roman_numeral('MMMDCCCXLVIII')).to eq(3848)
   end
+
+  it 'handles randomly generated ridiculus numbers' do
+    expect(roman_numeral('XLDCMCDVXMLVII')).to eq(2782)
+    expect(roman_numeral('MLCDILDICVMXXV')).to eq(2918)
+  end
 end
