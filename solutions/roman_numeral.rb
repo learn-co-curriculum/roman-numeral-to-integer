@@ -1,32 +1,21 @@
 def roman_numeral(string)
-  romans = {
-    I: 1,
-    IV: 4,
-    V: 5,
-    IX: 9,
-    X: 10,
-    XL: 40,
-    L: 50,
-    XC: 90,
-    C: 100,
-    CD: 400,
-    D: 500,
-    CM: 900,
-    M: 1000
+  values = {
+    "I" => 1,
+    "V" => 5,
+    "X" => 10,
+    "L" => 50,
+    "C" => 100,
+    "D" => 500,
+    "M" => 1000
   }
+
   total = 0
-  idx = 0
+  last_num = 0
 
-  while idx < string.length
-    twoChar = (string[idx] + (string[idx + 1] || '')).to_sym
-
-    if !romans[twoChar].nil?
-      total += romans[twoChar]
-      idx += 2
-    else
-      total += romans[string[idx].to_sym]
-      idx += 1
-    end
+  string.chars.each do |char|
+    current_value = values[char]
+    current_value <= last_num ? total += current_value : total += (current_value - last_num * 2)
+    last_num = current_value
   end
 
   total
@@ -36,73 +25,53 @@ if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 1"
   puts roman_numeral('I')
 
-  puts
-
   puts "Expecting: 9"
   puts roman_numeral('IX')
-
-  puts
 
   puts "Expecting: 402"
   puts roman_numeral('CDII')
 
-  # Don't forget to add your own!
-  puts
+  puts "Expecting: 1,900"
+  puts roman_numeral('CMM')
 
-  puts "Expecting: 3"
-  puts roman_numeral('III')
+  puts "Expecting: 909"
+  puts roman_numeral('CMIX')
 
-  puts
+  puts "Expecting: 4"
+  puts roman_numeral('IVX')
 
-  puts "Expecting: 1900"
-  puts roman_numeral('MCM')
+  puts "Expecting: 1089"
+  puts roman_numeral('IMXC')
 
-  puts
+  puts "Expecting: 2782"
+  puts roman_numeral('XLDCMCDVXMLVII')
 
-  puts "Expecting: 1999"
-  puts roman_numeral('MCMXCIX')
-
-  puts
-
-  puts "Expecting: 44"
-  puts roman_numeral('XLIV')
-
-  puts
-
-  puts "Expecting: 223"
-  puts roman_numeral('CCXXIII')
-
-  puts
-
-  puts "Expecting: 3848"
-  puts roman_numeral('MMMDCCCXLVIII')
+  puts "Expecting: 2918"
+  puts roman_numeral('MLCDILDICVMXXV')
 end
 
 # Please add your pseudocode to this file
-#############################################################################################
- # store important roman numerals in an Object called romans
- # initialize total to 0
- # 
- # iterate over string:
- #    if current character + next character is a key in romans:
- #      add that value to total
- #      skip over next character in iteration
- #    else:
- #      get value where current character is a key in romans
- #      add value to total
- # 
- # return total
-#############################################################################################
+# create total variable
+# create last_num variable
+# create hash to convert letters to values
+# iterate through string
+# for each character
+# convert character to int (using hash)
+# if current value is less than or equal to last value
+# add current value to total
+# else add current value - last value to total
+# update last value to current value
 
- # And a written explanation of your solution
-#############################################################################################
- # We can store the unique Roman numerals in an Object (key-value pairs), including
- # those where the small Roman numeral comes before the larger Roman numeral (e.g. 'IX').
- # When we iterate over the string, we first check if the current character plus the next
- # character is a key in the Object. If it is, we add the value associated with that key
- # to the total. We'll then need to increment our index in the string by 2. This takes care
- # of those numerals where the small number comes before the big one. If the two characters
- # together aren't a key, we add the value at the single-character key to the total and
- # increment the index by one.
-#############################################################################################
-
+# And a written explanation of your solution
+# Storing letter values in a hash
+# total variable keeps track of total
+# last_num variable keeps track of the previous number
+# While iterating through string,
+# getting value of current character from hash and saving it to current_value
+# Using ternary to check against last_num.
+# if current_value is less than or equal to last_num (eg: VI, II)
+# we are simply adding the current value to the total
+# its greater, we need to subtract the last_value from the total (b/c it was wrongly added already)
+# AND subtract it from current_value before adding the current value to the total.
+# Simplest way to do this is total += (current_value - last_num * 2)
+# then we update the last_num to reflect the current number
